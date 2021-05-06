@@ -27,6 +27,11 @@ public class CollectorDrop : MonoBehaviour {
         transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime);
     }
 
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
 
