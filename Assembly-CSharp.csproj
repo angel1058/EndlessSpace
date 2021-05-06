@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\AutoTarget.cs" />
      <Compile Include="Assets\Scripts\Fallers\CollectorDrop.cs" />
      <Compile Include="Assets\Scripts\Fallers\SpawnDroppers.cs" />
      <Compile Include="Assets\Scripts\InifiteStarScroll.cs" />

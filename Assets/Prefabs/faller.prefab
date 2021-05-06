@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3cde72f83f0de44bab9189ee3457a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDie: 5.11
   maxFallSpeed: 1
   minFallSpeed: 2
   minSpinSpeed: 15

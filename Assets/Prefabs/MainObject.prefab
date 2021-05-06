@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b255abb15bc6ca4cbf43ebf2e597cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 0.74
+  Timer: 0.75
   dropper: {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}

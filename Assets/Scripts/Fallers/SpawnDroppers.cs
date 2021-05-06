@@ -7,7 +7,7 @@ public class SpawnDroppers : MonoBehaviour
 {
     public float Timer = 2;
     public GameObject dropper;
-
+    private int i = 0;
     float tmpTimer;
     // Use this for initialization
     void Start()
@@ -23,7 +23,8 @@ public class SpawnDroppers : MonoBehaviour
         {
 
 
-            Instantiate(dropper, (new Vector3(Random.Range(-2.44f, 2.44f), 5, -0.1f)), transform.rotation);
+            GameObject g = (GameObject)(Instantiate(dropper, (new Vector3(Random.Range(-2.44f, 2.44f), 5, -0.1f)), transform.rotation));
+                g.name = "I" + i++;
             tmpTimer = Timer;
 
         }
