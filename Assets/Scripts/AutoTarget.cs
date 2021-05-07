@@ -68,7 +68,13 @@ public class AutoTarget : MonoBehaviour {
         Gizmos.color = Color.red;
         Vector3 pos = Emitter.position;
         Vector3 oldpos = pos;
-        pos.x += Range;
-        Gizmos.DrawWireSphere(oldpos, Range); 
+        pos.y += Range;
+        oldpos.y += Range;
+        pos.x = -3;
+
+        oldpos.x = 3;
+      //  pos.x += Range;
+
+        Gizmos.DrawLine(pos, oldpos); 
     }
 }
