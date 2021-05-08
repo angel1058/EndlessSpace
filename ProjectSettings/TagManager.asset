@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - Faller
+  - Missiles
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - 
   - Background
   - Collectables
-  - 
-  - 
-  - 
+  - Shooter
+  - Ground
+  - Missiles
   - 
   - 
   - 
@@ -50,4 +53,10 @@ TagManager:
     locked: 0
   - name: Collectables
     uniqueID: 2863268463
+    locked: 0
+  - name: Explode
+    uniqueID: 4111317563
+    locked: 0
+  - name: Plasma
+    uniqueID: 2154543491
     locked: 0
