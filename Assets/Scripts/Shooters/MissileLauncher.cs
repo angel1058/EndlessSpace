@@ -6,11 +6,11 @@ public class MissileLauncher : MonoBehaviour {
 
    private string logPrefix = "[EN-UNITY] [MISSILE LAUNCH] - ";
 
-    public bool DebugOn = false;
+    private bool DebugOn = false;
     public GameObject missilePreFab;
     // Use this for initialization
 
-    private Transform target;
+    public Transform target;
 
 public float FireRate = 1f;
 
@@ -33,7 +33,7 @@ public float FireRate = 1f;
         while (true)
         {
     
-            target = gameObject.GetComponent<TargetMapper>().target1;
+//            target = null;//gameObject.GetComponent<TargetMapper>().target1;
             if ( target == null)
                 Log( " no target");
             else

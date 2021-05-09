@@ -76,6 +76,8 @@ public class Faller : MonoBehaviour {
         Instantiate(Plasma[rnd] , gameObject.transform.position,  Quaternion.identity);
         }
         Destroy(gameObject);
+        GameMgr.Instance.FallersDestroyed++;
+   
     }
 
     private void MoveAndSpin()

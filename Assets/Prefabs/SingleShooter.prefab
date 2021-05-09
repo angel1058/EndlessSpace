@@ -38,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4149120597456652}
   - component: {fileID: 95447535007648930}
-  - component: {fileID: 114170546027932032}
   - component: {fileID: 114977273496110156}
   m_Layer: 10
   m_Name: Firepoint
@@ -66,8 +65,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409707465778086}
-  m_LocalRotation: {x: 0, y: 0, z: -0.026608357, w: 0.99964595}
-  m_LocalPosition: {x: 0.07, y: -4.7, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: -4.41, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4149120597456652}
@@ -98,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 1654986364195616}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 204b4b34365b10946a8e48a2a9b412ec, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -106,21 +105,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114170546027932032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654986364195616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe3bf585ff3b004d89328bb82ae706f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FallerTag: Faller
-  target1: {fileID: 0}
-  Range: 9.64
-  DebugOn: 0
 --- !u!114 &114392308132687492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +119,9 @@ MonoBehaviour:
   firePoint: {fileID: 4149120597456652}
   RotationSpeed: 5
   target: {fileID: 0}
-  startingPos: {x: 0, y: -4.0033193, z: -1}
+  startingPos: {x: 0, y: 0, z: 0}
+  GameManager: {fileID: 1433040188592720, guid: 2b04dac3598f6d140b25ad60f545e66e,
+    type: 2}
   DebugOn: 0
 --- !u!114 &114977273496110156
 MonoBehaviour:
@@ -148,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3330af4af358f40a75c221a8e24433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugOn: 1
   missilePreFab: {fileID: 1538746511210616, guid: ce59571517df8a2418fd84c7328a7b11,
     type: 2}
   FireRate: 0.12

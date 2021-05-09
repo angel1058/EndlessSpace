@@ -13,6 +13,8 @@ public float RotationSpeed = 5f;
     public Transform target = null;
     public Vector3 startingPos;
 
+    public GameObject GameManager;
+
     public bool DebugOn;
     // Use this for initialization
     void Start () {
@@ -22,7 +24,7 @@ public float RotationSpeed = 5f;
 
        void Log(string message)
     {
-        if (!DebugOn)
+        if (DebugOn == false)
             return;
 
         Debug.Log(logPrefix + message);
@@ -30,14 +32,24 @@ public float RotationSpeed = 5f;
     private float lastAngle;
     // Update is called once per frame
     void Update() {
-        target = firePoint.gameObject.GetComponent<TargetMapper>().target1;
 
         if ( target == null)
         {
-            Log( " No target");
-            return;
+            target = GameManager.GetComponent<TargetMapper>().GetTarget(this.gameObject);
+            if ( target == null)
+            {
+                Log( " No target");
+                return;
+            }
+            else
+            {
+                Log( " target aquired");
+                //tell the shooter thing...
+                firePoint.GetComponent<MissileLauncher>().target = target;
+               
+            }
         }
-        Log( " target aquired");
+
 
         Vector3 targetPos;
         float angleOffset;

@@ -52,16 +52,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
+     <Compile Include="Assets\2D Space Kit\Scripts\RadarMover.cs" />
      <Compile Include="Assets\Scripts\Fallers\Faller.cs" />
      <Compile Include="Assets\Scripts\Fallers\SpawnFallers.cs" />
+     <Compile Include="Assets\Scripts\GameMgr.cs" />
      <Compile Include="Assets\Scripts\InifiteStarScroll.cs" />
+     <Compile Include="Assets\Scripts\PageChange.cs" />
      <Compile Include="Assets\Scripts\PlasmaDrop.cs" />
      <Compile Include="Assets\Scripts\Shooters\Missile.cs" />
      <Compile Include="Assets\Scripts\Shooters\MissileLauncher.cs" />
      <Compile Include="Assets\Scripts\Shooters\TargetMapper.cs" />
      <Compile Include="Assets\Scripts\Shooters\TurretAim.cs" />
      <Compile Include="Assets\Scripts\Utils\Debugger.cs" />
-     <None Include="Assets\SpriteUnlitShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

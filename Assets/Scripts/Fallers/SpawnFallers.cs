@@ -5,31 +5,40 @@ using UnityEngine;
 
 public class SpawnFallers  : MonoBehaviour
 {
-    public float Timer = 2;
+
+    public float SpawnRate = 1.0f;
     public GameObject[] fallers;
-    private int i = 0;
-    float tmpTimer;
+    private static  int i = 0;
+    private int fallerTypeCount ;
+
+    [Header("Utility Stuff")]
+    public bool isDisabled = false;
     // Use this for initialization
     void Start()
     {
-        tmpTimer = Timer;
+        fallerTypeCount = fallers.Length;
+        StartCoroutine( Drop() ) ;
+        InvokeRepeating("Drop", 1.0f, SpawnRate);
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Drop()
     {
-        int elements = fallers.Length;
-        int rnd = Random.Range(0,elements);
-
-        tmpTimer -= Time.deltaTime;
-        if (tmpTimer <= 0f)
+        yield return new WaitForSeconds(1f);
+        while (true)
         {
-
-GameObject g = (GameObject)(Instantiate(fallers[rnd], (new Vector3(Random.Range(-2.44f, 2.44f), 5, -0.1f)), transform.rotation));
-                g.name = "F2_" + i++;
-            tmpTimer = Timer;
-
+            if ( isDisabled == true)
+                yield return new WaitForSeconds(SpawnRate);
+            else
+            {
+            int rnd = Random.Range(0,fallerTypeCount);
+            GameObject g = (GameObject)(Instantiate(fallers[rnd], (new Vector3(Random.Range(-2.44f, 2.44f), 5, -0.1f)), transform.rotation));
+            g.name = "F_" + rnd +  "_" + i++;
+          
+            yield return new WaitForSeconds(SpawnRate);
+            }
         }
     }
+
+  
 }
 

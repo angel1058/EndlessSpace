@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDie: 5
-  maxFallSpeed: 0.3
+  maxFallSpeed: 0.78
   minFallSpeed: 0.1
   minSpinSpeed: 15
   maxSpinSpeed: 55

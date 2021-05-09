@@ -4,75 +4,120 @@ using UnityEngine;
 
 public class TargetMapper : MonoBehaviour {
 
-
+[Header("Falling Stuff")]
 public string FallerTag = "Faller";
 
- public Transform target1 ;
+[Header("Aiming Stuff")]
 
- public float Range;
+public Transform Ground = null;
+public Transform Sky = null;
 
+
+[Range(0.0f,1.0f)]
+public float Range;
+
+private float groundYPos;
+private float skyYPos;
+
+private float height;
+ 
+[Header("Utils")]
 public bool DebugOn;
+
  private string logPrefix = "[EN-UNITY] [TARGET-MAPPER] - ";
 
+List<Transform> targets = new List<Transform>();
  void Start () {
-        InvokeRepeating("FindTarget", 0, 0.1f);
+        groundYPos = Ground.position.y;
+        skyYPos = Sky.position.y;
+        height = skyYPos - groundYPos;
+     //   Log("The Ground : " + groundYPos.ToString());
+      //  StartCoroutine( FindTarget() ) ;
+       // InvokeRepeating("FindTarget", 0, targetRate);
 	}
 
     void Log(string message)
     {
-        if (!DebugOn)
+        if (DebugOn == false)
             return;
 
         Debug.Log(logPrefix + message);
     }
-	void FindTarget()
-	{
 
-        if ( target1 != null)
-        {
-            Log(" Already have a target" + target1);
-            return;
-        }
-        Log( " Finding Target");
+public void RemoveTarget(Transform target)
+{
+    targets.Remove(target);
+}
 
+
+public Transform GetTarget(GameObject requester)
+{
+        groundYPos = Ground.position.y;
+        skyYPos = Sky.position.y;
+        height = skyYPos - groundYPos;
+        //Log("Request for Target from " + requester.name);
         GameObject[] fallers = GameObject.FindGameObjectsWithTag(FallerTag);
         float closest = Mathf.Infinity;
         GameObject nearestFaller = null;
 
-        Log( " We have " + fallers.Length + " fallers");
+        float inRangeValue= groundYPos + (height * Range);
 
+        Transform nextTarget = null;
     	foreach(GameObject g in fallers)
         {
-            float distanceToFaller = g.transform.position.y;
+            if ( targets.Contains(g.transform))
+            {
+                Log(g + " is already a target - skipping");
+                continue;
+            }
+
+            //if we're here, this is a potential target
+            float distanceToFaller = g.transform.position.y - inRangeValue;
+            Log(distanceToFaller.ToString());
+            if ( distanceToFaller > 0)
+            {
+                    Log(g + "not in range");
+                    continue;
+            }
+
+            //if we are here, we are in range
             if (distanceToFaller < closest)
             {
                 closest = distanceToFaller;
                 nearestFaller = g;
+                nextTarget = nearestFaller.transform;
             }
-            Log( "transform pos : " + transform.position.y);
-            Log( "transform pos + range : " + transform.position.y + Range);
-            Log( "closest : " + closest);
-            if (nearestFaller != null && closest <= transform.position.y + Range)
-                target1 = nearestFaller.transform;
-            else
-                target1 = null;
+
         }
 
-		if (target1 == null )
-		    Log( " Target not found");
-		else
-		    Log( " Target found" + target1.name);
-	}
- void OnDrawGizmosSelected()
+        if ( nextTarget != null)
+            {
+                targets.Add(nextTarget);
+                Log("We have a target - sending " + nextTarget.name + " to " + requester.name);
+            }
+            else
+            Log("no next target");
+        return nextTarget;
+    }
+	
+ void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Vector3 pos = transform.position;
         Vector3 oldpos = pos;
-        pos.y += Range;
-        oldpos.y += Range;
+        pos.y = groundYPos;
+        oldpos.y = groundYPos;
         pos.x = -3;
         oldpos.x = 3;
 
         Gizmos.DrawLine(pos, oldpos); 
+
+
+        Gizmos.color = Color.yellow;
+        pos.y = groundYPos + height * Range;
+        oldpos.y = groundYPos + height * Range;
+
+        Gizmos.DrawLine(pos, oldpos); 
+
     }
 }

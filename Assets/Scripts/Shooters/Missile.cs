@@ -9,7 +9,7 @@ public string tagToKill;
 public GameObject explosion;
  public GameObject littleExplosion;
 private  GameObject FirePoint;
- public bool DebugOn = false;
+ private bool DebugOn = false;
 
  private bool HadTarget = false;
  private string logPrefix = "[EN-UNITY] [MISSILE] - ";
@@ -26,7 +26,7 @@ public void SetFirePoint(GameObject Fp)
 }
   void Log(string message)
     {
-        if (!DebugOn)
+        if (DebugOn == false)
             return;
 
         Debug.Log(logPrefix + message);
@@ -49,7 +49,7 @@ void GetNewTarget()
 	if ( HadTarget && ResetEnemy == false)
 		return;
 	HadTarget = true;	
-	target = FirePoint.gameObject.GetComponent<TargetMapper>().target1;
+	target = FirePoint.gameObject.GetComponent<MissileLauncher>().target;
 	if ( target == null)
 		Log ("no target");
 	else

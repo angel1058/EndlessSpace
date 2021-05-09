@@ -90,10 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDie: 7
-  maxFallSpeed: 1
+  maxFallSpeed: 1.44
   minFallSpeed: 0.5
-  minSpinSpeed: 15
-  maxSpinSpeed: 55
+  minSpinSpeed: 154.7
+  maxSpinSpeed: 196
   Plasma:
   - {fileID: 1199179529592906, guid: 9b712bc5546618148a13e8d9f6691677, type: 2}
   - {fileID: 1199179529592906, guid: 8592b27bb3d08014fa46bbe17c2b215c, type: 2}
