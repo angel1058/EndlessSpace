@@ -46,7 +46,6 @@ public float RotationSpeed = 5f;
                 Log( " target aquired");
                 //tell the shooter thing...
                 firePoint.GetComponent<MissileLauncher>().target = target;
-               
             }
         }
 

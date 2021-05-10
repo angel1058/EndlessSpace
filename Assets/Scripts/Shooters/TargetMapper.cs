@@ -14,7 +14,7 @@ public Transform Sky = null;
 
 
 [Range(0.0f,1.0f)]
-public float Range;
+public float Range = 1f;
 
 private float groundYPos;
 private float skyYPos;
@@ -31,9 +31,6 @@ List<Transform> targets = new List<Transform>();
         groundYPos = Ground.position.y;
         skyYPos = Sky.position.y;
         height = skyYPos - groundYPos;
-     //   Log("The Ground : " + groundYPos.ToString());
-      //  StartCoroutine( FindTarget() ) ;
-       // InvokeRepeating("FindTarget", 0, targetRate);
 	}
 
     void Log(string message)
@@ -70,6 +67,10 @@ public Transform GetTarget(GameObject requester)
                 Log(g + " is already a target - skipping");
                 continue;
             }
+
+            //if the object isn't fully visible ( not falling - skip)
+            if ( g.GetComponent<Faller>().isFalling == false)
+                continue;
 
             //if we're here, this is a potential target
             float distanceToFaller = g.transform.position.y - inRangeValue;

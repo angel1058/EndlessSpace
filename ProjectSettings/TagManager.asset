@@ -8,6 +8,7 @@ TagManager:
   - Faller
   - Missiles
   - Bullet
+  - GameManager
   layers:
   - Default
   - TransparentFX

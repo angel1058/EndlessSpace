@@ -9,6 +9,8 @@ public class SpawnFallers  : MonoBehaviour
     public float SpawnRate = 1.0f;
     public GameObject[] fallers;
     private static  int i = 0;
+
+    public Transform spawnPoint;
     private int fallerTypeCount ;
 
     [Header("Utility Stuff")]
@@ -31,7 +33,7 @@ public class SpawnFallers  : MonoBehaviour
             else
             {
             int rnd = Random.Range(0,fallerTypeCount);
-            GameObject g = (GameObject)(Instantiate(fallers[rnd], (new Vector3(Random.Range(-2.44f, 2.44f), 5, -0.1f)), transform.rotation));
+            GameObject g = (GameObject)(Instantiate(fallers[rnd], (new Vector3(Random.Range(-2.44f, 2.44f), spawnPoint.position.y, -0.1f)), transform.rotation));
             g.name = "F_" + rnd +  "_" + i++;
           
             yield return new WaitForSeconds(SpawnRate);

@@ -6,6 +6,8 @@ public class Missile : MonoBehaviour {
 
 public bool ResetEnemy = false;
 public string tagToKill;
+
+public float MissileStrength;
 public GameObject explosion;
  public GameObject littleExplosion;
 private  GameObject FirePoint;
@@ -39,7 +41,7 @@ void OnCollisionEnter2D(Collision2D collision)
 		GameObject g = Instantiate(explosion ,transform.position , transform.rotation);
 		Destroy(g,0.5f);
 	if ( collision.gameObject != null)
-		collision.gameObject.GetComponent<Faller>().HitIt();
+		collision.gameObject.GetComponent<Faller>().HitIt(MissileStrength);
 	}
 }
 
@@ -67,7 +69,8 @@ public void SetTarget(Transform target)
     public float movementSpeed = 5f;
     void FixedUpdate ()
     {
-		if ( transform.position.x < -3 || transform.position.x > 3)
+		if ( transform.position.x < -3 || transform.position.x > 3 || 
+		transform.position.y > 5)
 			Destroy(gameObject);
 
 		if ( target == null)

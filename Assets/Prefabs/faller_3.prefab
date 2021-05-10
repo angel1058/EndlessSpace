@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 12
   m_LinearDrag: 1000000
   m_AngularDrag: 1000000
   m_GravityScale: 0
@@ -112,15 +112,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDie: 5
-  maxFallSpeed: 0.78
-  minFallSpeed: 0.1
+  maxFallSpeed: 0.25
+  minFallSpeed: 0.75
   minSpinSpeed: 15
   maxSpinSpeed: 55
+  ScaleSpeed: 2
+  MaxScale: 2
   Plasma:
   - {fileID: 1199179529592906, guid: 9b712bc5546618148a13e8d9f6691677, type: 2}
   - {fileID: 1199179529592906, guid: 8592b27bb3d08014fa46bbe17c2b215c, type: 2}
   - {fileID: 1199179529592906, guid: 473cb5762b72c8a4aa8d24afdc4d6479, type: 2}
-  hitsToKill: 4
+  isFalling: 0
+  hitsToKill: 10
 --- !u!212 &212261217216283346
 SpriteRenderer:
   m_ObjectHideFlags: 1

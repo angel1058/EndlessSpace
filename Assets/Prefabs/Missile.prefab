@@ -101,10 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResetEnemy: 1
   tagToKill: Faller
+  MissileStrength: 1
   explosion: {fileID: 1320599449432436, guid: 67108efb437be9e46968b9e324bdb7cd, type: 2}
   littleExplosion: {fileID: 1463225692500652, guid: 69126431de12f754a9f822599cf91f04,
     type: 2}
-  DebugOn: 1
   target: {fileID: 0}
   rigidBody: {fileID: 50664918043617294}
   angleChangingSpeed: 600

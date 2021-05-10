@@ -22,8 +22,8 @@ public float ScaleSpeed = 20f;
 	   Vector3 scale = transform.localScale;
 	   if ( scale.x < 1)
 	   {
-        scale.x += ScaleSpeed * fallSpeed*Time.deltaTime;
-        scale.y += ScaleSpeed * fallSpeed*Time.deltaTime;
+        scale.x += ScaleSpeed * Time.deltaTime;
+        scale.y += ScaleSpeed * Time.deltaTime;
 
         transform.localScale = scale;
 	   }
@@ -37,7 +37,6 @@ else{
 		if ( transform.position.y < -6.5)
 		{
 			Destroy(gameObject);
-		       Debug.Log(GameMgr.Instance.FallersDestroyed);
  
 		}
 	}

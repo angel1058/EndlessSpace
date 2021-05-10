@@ -33,7 +33,6 @@ public float FireRate = 1f;
         while (true)
         {
     
-//            target = null;//gameObject.GetComponent<TargetMapper>().target1;
             if ( target == null)
                 Log( " no target");
             else
@@ -41,6 +40,7 @@ public float FireRate = 1f;
                     Log( " launching towards " + target);
                 GameObject missile = Instantiate(missilePreFab, transform.position, transform.rotation);
                 missile.gameObject.GetComponent<Missile>().SetFirePoint(gameObject);
+                GameMgr.Instance.Fire();
                 }
      
             yield return new WaitForSeconds(FireRate);
