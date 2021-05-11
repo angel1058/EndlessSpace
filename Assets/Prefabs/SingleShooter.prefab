@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missilePreFab: {fileID: 1538746511210616, guid: ce59571517df8a2418fd84c7328a7b11,
     type: 2}
+  target: {fileID: 0}
   FireRate: 0.12
 --- !u!212 &212524937881803128
 SpriteRenderer:
@@ -171,7 +172,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f94df059a55ade342918fe7d0e8c2299, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ac4ade6ac3bf7b4fada66afb8dcec7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -61,3 +61,6 @@ TagManager:
   - name: Plasma
     uniqueID: 2154543491
     locked: 0
+  - name: Shooter
+    uniqueID: 4046426203
+    locked: 0

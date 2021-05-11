@@ -20,7 +20,7 @@ public class Faller : MonoBehaviour {
     public GameObject[] Plasma;
     public bool isFalling = false;
 
-    Renderer renderer;
+    Renderer transparencyRend;
     private float hitCount;
 
     private Color c;
@@ -35,15 +35,15 @@ public class Faller : MonoBehaviour {
         scaleReducer = transform.localScale.x / hitsToKill;
         //
          Vector3 scale = transform.localScale;
-        scale.x = 0;//scaleReducer * timeToDie * Time.deltaTime;
-        scale.y = 0;//scaleReducer * timeToDie * Time.deltaTime;
+        scale.x = 0;
+        scale.y = 0;
 
         transform.localScale = scale;
 
-        renderer = GetComponent<SpriteRenderer>();
-        c = renderer.material.color;
+		transparencyRend = GetComponent<SpriteRenderer>();
+		c = transparencyRend.material.color;
         c.a = 0;
-        renderer.material.color = c;
+		transparencyRend.material.color = c;
     }
 
 
@@ -60,7 +60,7 @@ void fadeIn()
         if ( c.a < 1)
         {
             c.a += ScaleSpeed * Time.deltaTime * 0.5f;
-            renderer.material.color = c;
+				transparencyRend.material.color = c;
         }
         transform.localScale = scale;
 	   }

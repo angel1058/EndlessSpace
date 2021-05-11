@@ -50,7 +50,9 @@ void GetNewTarget()
 { 
 	if ( HadTarget && ResetEnemy == false)
 		return;
-	HadTarget = true;	
+	HadTarget = true;
+		if (FirePoint == null)
+			return;
 	target = FirePoint.gameObject.GetComponent<MissileLauncher>().target;
 	if ( target == null)
 		Log ("no target");

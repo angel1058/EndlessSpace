@@ -15,11 +15,16 @@ public float RotationSpeed = 5f;
 
     public GameObject GameManager;
 
+	private TargetMapper targetMapper;
+	private MissileLauncher missileLauncher;
+
     public bool DebugOn;
     // Use this for initialization
     void Start () {
         startingPos = transform.position;
       //  InvokeRepeating("UpdateTarget", 0, 0.1f);
+		targetMapper = GameManager.GetComponent<TargetMapper>();
+		missileLauncher = firePoint.GetComponent<MissileLauncher> ();
 	}
 
        void Log(string message)
@@ -35,7 +40,7 @@ public float RotationSpeed = 5f;
 
         if ( target == null)
         {
-            target = GameManager.GetComponent<TargetMapper>().GetTarget(this.gameObject);
+			target = targetMapper.GetTarget(this.gameObject);
             if ( target == null)
             {
                 Log( " No target");
@@ -45,7 +50,7 @@ public float RotationSpeed = 5f;
             {
                 Log( " target aquired");
                 //tell the shooter thing...
-                firePoint.GetComponent<MissileLauncher>().target = target;
+				missileLauncher.target = target;
             }
         }
 

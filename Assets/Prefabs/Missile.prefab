@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1538746511210616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.885, y: 0.924, z: -0.1}
+  m_LocalPosition: {x: -3.885, y: 0.924, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResetEnemy: 1
   tagToKill: Faller
-  MissileStrength: 1
+  MissileStrength: 3.33
   explosion: {fileID: 1320599449432436, guid: 67108efb437be9e46968b9e324bdb7cd, type: 2}
   littleExplosion: {fileID: 1463225692500652, guid: 69126431de12f754a9f822599cf91f04,
     type: 2}
@@ -140,8 +140,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1431698833
-  m_SortingLayer: 3
+  m_SortingLayerID: -2140423805
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98be93167ed6cd54d82a8e882da6f3e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
