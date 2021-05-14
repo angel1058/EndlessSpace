@@ -54,5 +54,14 @@ MonoBehaviour:
   SpawnRate: 2
   fallers:
   - {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}
+  - {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}
+  - {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}
+  - {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}
+  - {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}
+  - {fileID: 1115508976312758, guid: e34b4af6d647da547875ec877352b9da, type: 2}
+  - {fileID: 1115508976312758, guid: 8992d8d4bff989c4b8bb0752187f01ad, type: 2}
+  - {fileID: 1115508976312758, guid: 8992d8d4bff989c4b8bb0752187f01ad, type: 2}
+  - {fileID: 1115508976312758, guid: 8992d8d4bff989c4b8bb0752187f01ad, type: 2}
+  - {fileID: 1115508976312758, guid: 4f2ec3c38a05676469c3d1fc36740ea7, type: 2}
   spawnPoint: {fileID: 0}
   isDisabled: 0

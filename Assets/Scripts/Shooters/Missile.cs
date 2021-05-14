@@ -7,21 +7,30 @@ public class Missile : MonoBehaviour {
 public bool ResetEnemy = false;
 public string tagToKill;
 
-public float MissileStrength;
+private float MissileStrength;
 public GameObject explosion;
  public GameObject littleExplosion;
 private  GameObject FirePoint;
  private bool DebugOn = false;
-
+	private MissileLauncher MissileLauncher;
  private bool HadTarget = false;
  private string logPrefix = "[EN-UNITY] [MISSILE] - ";
 
  private void Start() {
+		MissileLauncher = FirePoint.gameObject.GetComponent<MissileLauncher> ();
 	     GetNewTarget();
  }
 
 
-public void SetFirePoint(GameObject Fp)
+	public void SetMissileStrength(float value , float colour)
+	{
+		MissileStrength = value;
+		Color c = gameObject.GetComponent<SpriteRenderer> ().material.color;
+		c.g = colour;
+		gameObject.GetComponent<SpriteRenderer> ().material.color = c;
+	}
+
+	public void SetFirePoint(GameObject Fp)
 {
 	Log("FirePoint set to " + Fp);
 	FirePoint = Fp;
@@ -50,14 +59,13 @@ void GetNewTarget()
 { 
 	if ( HadTarget && ResetEnemy == false)
 		return;
+		
 	HadTarget = true;
-		if (FirePoint == null)
-			return;
-	target = FirePoint.gameObject.GetComponent<MissileLauncher>().target;
-	if ( target == null)
-		Log ("no target");
-	else
-		Log("We're aiming towards " + target);
+	
+	if (FirePoint == null)
+		return;
+
+	target = MissileLauncher.target;
 }
 
 public void SetTarget(Transform target)

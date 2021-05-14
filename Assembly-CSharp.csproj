@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
      <Compile Include="Assets\2D Space Kit\Scripts\RadarMover.cs" />
+     <Compile Include="Assets\Scripts\EnergyUpdate.cs" />
      <Compile Include="Assets\Scripts\Fallers\Faller.cs" />
      <Compile Include="Assets\Scripts\Fallers\SpawnFallers.cs" />
      <Compile Include="Assets\Scripts\GameMgr.cs" />
